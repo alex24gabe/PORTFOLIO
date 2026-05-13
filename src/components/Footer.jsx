@@ -24,7 +24,7 @@ function Footer() {
 
     {
       icon: <FiTwitter />,
-      link: "#",
+      link: "https://x.com/alextech027?s=21",
     },
      {
   icon: <FaWhatsapp />,
