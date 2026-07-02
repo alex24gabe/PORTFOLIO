@@ -1,74 +1,60 @@
 import { motion } from "framer-motion";
+import { FiGithub, FiExternalLink } from "react-icons/fi";
 
-import {
-  FiGithub,
-  FiExternalLink,
-  FiLinkedin,
-} from "react-icons/fi";
 
-import project1 from "../assets/project1.png";
-import project2 from "../assets/project2.svg";
-import project3 from "../assets/project3.svg";
 
+import project3 from "../assets/votingpoll.jpg";
+import project2 from "../assets/asset2.jpg";
+import project1 from "../assets/image3.jpg";
 function Projects({ darkMode }) {
-
   const projects = [
-
     {
-      image: project1,
+      image: project3,
 
-      title: "Modern Dashboard UI",
+      title: "Bencom Assessment",
 
       description:
-        "A professional admin dashboard with responsive layouts, animations and clean UI systems.",
+        "A responsive frontend assessment built with React and Tailwind CSS. The project demonstrates reusable components, responsive layouts, and modern UI development.",
 
-      tech: ["React", "Tailwind", "Framer Motion"],
+      tech: ["React", "Tailwind CSS", "Vite"],
 
-      live: "https://x.com",
+      live: "https://elect-nu.vercel.app/",
 
-      github: "https://github.com/alex24gabe",
-
-      linkedin: "https://www.linkedin.com/in/altechweb",
+      github: "https://github.com/alex24gabe/bincom_assessment.git",
     },
 
     {
       image: project2,
 
-      title: "Social Media App",
+      title: "Developer Portfolio",
 
       description:
-        "A modern social interface with interactive components and responsive architecture.",
+        "My personal portfolio showcasing my skills, projects, and frontend development experience with responsive design, animations, and dark mode support.",
 
-      tech: ["React", "Firebase", "CSS"],
+      tech: ["React", "Tailwind CSS", "Framer Motion"],
 
-      live: "https://facebook.com",
+      live: "https://alex-dev-web-portfolio.vercel.app/",
 
-      github: "https://github.com/alex24gabe",
-
-      linkedin: "https://www.linkedin.com/in/altechweb",
+      github: "https://github.com/alex24gabe/PORTFOLIO.git",
     },
 
     {
-      image: project3,
+      image: project1,
 
-      title: "Portfolio Website",
+      title: "Upcoming Project",
 
       description:
-        "A premium animated portfolio website with dark mode and responsive frontend design.",
+        "A new project currently under development. It will be added here soon with a live demo and source code.",
 
-      tech: ["React", "Tailwind", "Motion"],
+      tech: ["Coming Soon"],
 
-      live: "https://instagram.com",
+      live: "#",
 
-      github: "https://github.com/alex24gabe",
-
-      linkedin: "https://www.linkedin.com/in/altechweb",
+      github: "#",
     },
-
   ];
 
   return (
-
     <section
       id="projects"
       className={
@@ -77,7 +63,6 @@ function Projects({ darkMode }) {
           : "py-32 px-6 bg-gray-200 transition-colors duration-500"
       }
     >
-
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -85,11 +70,9 @@ function Projects({ darkMode }) {
         viewport={{ once: true }}
         className="max-w-7xl mx-auto"
       >
-
         {/* HEADER */}
 
         <div className="text-center mb-20">
-
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -97,9 +80,7 @@ function Projects({ darkMode }) {
             viewport={{ once: true }}
             className="text-cyan-400 font-semibold mb-4"
           >
-
             My Projects
-
           </motion.p>
 
           <motion.h2
@@ -113,9 +94,7 @@ function Projects({ darkMode }) {
                 : "text-4xl md:text-5xl font-bold mb-6 text-slate-900"
             }
           >
-
             Featured Work
-
           </motion.h2>
 
           <motion.p
@@ -129,21 +108,15 @@ function Projects({ darkMode }) {
                 : "text-slate-600 text-lg max-w-2xl mx-auto leading-relaxed"
             }
           >
-
-            A collection of projects showcasing
-            modern frontend architecture,
-            responsive layouts and premium UI design.
-
+            A collection of projects showcasing modern frontend development,
+            responsive layouts, animations, and user-focused design.
           </motion.p>
-
         </div>
 
         {/* PROJECT GRID */}
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-
           {projects.map((project, index) => (
-
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 40 }}
@@ -160,11 +133,9 @@ function Projects({ darkMode }) {
                   : "group bg-white rounded-3xl overflow-hidden border border-gray-300 hover:border-cyan-400 transition duration-300"
               }
             >
-
-              {/* IMAGE CONTAINER */}
+              {/* IMAGE */}
 
               <div className="relative overflow-hidden">
-
                 <motion.img
                   whileHover={{ scale: 1.1 }}
                   transition={{ duration: 0.5 }}
@@ -176,54 +147,33 @@ function Projects({ darkMode }) {
                 {/* OVERLAY */}
 
                 <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center gap-4">
-
-                  {/* LIVE LINK */}
-
                   <motion.a
                     href={project.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
                     className="bg-black p-4 rounded-full text-white"
                   >
-
                     <FiExternalLink />
-
                   </motion.a>
-
-                  {/* GITHUB LINK */}
 
                   <motion.a
                     href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
                     className="bg-gray-900 p-4 rounded-full text-white"
                   >
-
                     <FiGithub />
-
                   </motion.a>
-
-                  {/* LINKEDIN LINK */}
-
-                  <motion.a
-                    href={project.linkedin}
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="bg-blue-600 p-4 rounded-full text-white"
-                  >
-
-                    <FiLinkedin />
-
-                  </motion.a>
-
                 </div>
-
               </div>
 
               {/* CONTENT */}
 
               <div className="p-8">
-
                 <h3
                   className={
                     darkMode
@@ -231,9 +181,7 @@ function Projects({ darkMode }) {
                       : "text-2xl font-bold mb-4 text-slate-900"
                   }
                 >
-
                   {project.title}
-
                 </h3>
 
                 <p
@@ -243,17 +191,11 @@ function Projects({ darkMode }) {
                       : "text-slate-600 leading-relaxed mb-6"
                   }
                 >
-
                   {project.description}
-
                 </p>
 
-                {/* TECH STACK */}
-
                 <div className="flex flex-wrap gap-3">
-
                   {project.tech.map((tech, techIndex) => (
-
                     <span
                       key={techIndex}
                       className={
@@ -262,25 +204,15 @@ function Projects({ darkMode }) {
                           : "bg-gray-200 text-cyan-600 px-4 py-2 rounded-full text-sm"
                       }
                     >
-
                       {tech}
-
                     </span>
-
                   ))}
-
                 </div>
-
               </div>
-
             </motion.div>
-
           ))}
-
         </div>
-
       </motion.div>
-
     </section>
   );
 }
